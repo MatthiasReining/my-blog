@@ -1,0 +1,57 @@
+<div id="articleLinkList">
+<br/>
+
+<#list entries as entry>
+
+<#if entry_index == 1>
+    <div id="ad-index-right" >
+        <script type="text/javascript"><!--
+            google_ad_client = 'ca-pub-3643460398629242';
+            /* ad 160x600 */
+            google_ad_slot = '9153974075';
+            google_ad_width = 160;
+            google_ad_height = 600;
+            //-->
+        </script>
+        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    </div>
+</#if>
+
+<article>
+     <hr/>
+     <header>
+        <a href="${blogRoot}/${entry.key}">
+            <p>
+                <time datetime="2013-01-15T18:02:31">${entry.created?datetime?string.full}</time>
+                ${entry.subtitle}
+            </p>
+            <h2>${entry.title}</h2>
+        </a>
+    </header>
+    ${entry.abstractHTMLContent}
+    <a href="${blogRoot}/${entry.key}">[weiterlesen]</a>
+    </p>
+
+    <footer>
+        <!-- AddThis Button BEGIN -->
+        <div class="indexSocialLinks2 addthis_toolbox addthis_default_style addthis_16x16_style"
+                addthis:url="http://mr678.blogspot.de/2013/01/blogsystem.html"
+                addthis:title="Hooray!">
+            <a class="addthis_button_twitter"></a>
+            <a class="addthis_button_xing"></a>
+            <a class="addthis_button_google_plusone_share"></a>
+            <a class="addthis_button_facebook"></a>
+            <a class="addthis_button_compact"></a>
+
+            <a href="${blogRoot}/${entry.key}#comments" style="padding: 0 0 0 20px">[Kommentare]</a>
+        </div>
+        <!-- AddThis Button END -->
+       
+    </footer>
+</article>
+
+</#list>
+
+</div>
+
+
