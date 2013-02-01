@@ -5,22 +5,20 @@
     <link rel="stylesheet" href="${blogRoot}/style.css" />
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css" />
     <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-
     <title>${entry.title} by @MatthiasReining</title>
 </head>
 
 <body>
 
-
-    <a href="#" class="older"></a>
-    <a href="#" class="newer"></a>
-
-
+    <#include "horizontal-links.html">
+   
     <div id="blog">
     <#include "page-header.html">
     <#include "main-article.html">
 
     <#include "page-footer.html">
     </div>
+    
+    <#include "google-analytics.html">
 </body>
 </html>

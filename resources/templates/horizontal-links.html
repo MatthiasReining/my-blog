@@ -1,0 +1,21 @@
+
+<#if entry.prevEntry??>
+    <a title="${entry.prevEntry.title}" id="prefLink" href="${blogRoot}/${entry.prevEntry.key}" class="older"></a>
+</#if>
+<#if entry.nextEntry??>
+    <a title="${entry.nextEntry.title}" id="nextLink" href="${blogRoot}/${entry.nextEntry.key}" class="newer"></a>
+</#if>
+
+<script>
+document.onkeydown = function(e) {
+    var down = e.which;
+    if(down == 37){
+        if (document.getElementById('prefLink'))
+            document.getElementById('prefLink').click();
+    }
+    if(down == 39){
+        if (document.getElementById('nextLink'))
+            document.getElementById('nextLink').click();
+    }
+}
+</script>
