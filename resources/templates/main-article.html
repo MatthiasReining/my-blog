@@ -11,45 +11,18 @@
      ${entry.htmlContent}
 
      <footer>
-         <br/>
-
-         <#if false>
-         <div id="ad4">
-             <script type="text/javascript"><!--
-                   google_ad_client = 'ca-pub-3643460398629242';
-                   /* ad 728x15 */
-                   google_ad_slot = '7537640073';
-                   google_ad_width = 728;
-                   google_ad_height = 15;
-                   //-->
-             </script>
-             <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-        </div>
-        <hr/>
-        </#if>
-
-
-
+                
         <!-- AddThis Button BEGIN -->
-       <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-           <a class="addthis_button_twitter"></a>
-           <a class="addthis_button_xing"></a>
-           <a class="addthis_button_google_plusone_share"></a>
-           <a class="addthis_button_facebook"></a>
-           <a class="addthis_button_preferred_1"></a>
-           <a class="addthis_button_preferred_2"></a>
-           <a class="addthis_button_compact"></a>
-
-           <#if isIndexPage == true>
-           <a href="${blogRoot}/${entry.key}#comments" style="padding: 3px 0 0 40px">[Kommentare]</a>
-           </#if>
-       </div>
-
-       <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f7302d47b1751f"></script>
+        <div class="addthis_toolbox addthis_floating_style addthis_32x32_style" style="top:138px; margin-left: -60px;">
+            <a class="addthis_button_preferred_1"></a>
+            <a class="addthis_button_preferred_2"></a>
+            <a class="addthis_button_preferred_3"></a>
+            <a class="addthis_button_preferred_4"></a>
+            <a class="addthis_button_compact"></a>
+        </div>
+        <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
        <!-- AddThis Button END -->
 
-
-       <br/><br/>
 
        <div class="ad">
            <script type="text/javascript"><!--
@@ -62,9 +35,8 @@
            </script>
            <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
        </div>
-
-
-       <#if isIndexPage == false>
+       
+       <br/><br/><br/>
 
            <a name="comments" />
            <div id="disqus_thread"></div>
@@ -85,9 +57,6 @@
            </script>
            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-       </#if>
-
 
             <br/>
         </footer>
