@@ -4,7 +4,7 @@ created=2013-01-29T12:52:00
 tags=Test
 
 <img src="http://polpix.sueddeutsche.com/bild/1.1586121.1359461567/640x360/krise-euro-wall-street.jpg" />
-Eine Analyse von Jannis Brühl
+Testseite aus der Süddeutschen
 
 Ende der Kapitalflucht: Zum ersten Mal seit Jahren fließen Milliarden Euro nach Griechenland, Italien oder Portugal. Die Börsenkurse steigen. Ist die Krise in Europa vorbei? Nein. Weiter verlieren immer mehr Menschen Arbeit und Obdach.
 
