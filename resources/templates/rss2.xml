@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+   <channel>
+      <atom:link href='http://blog.matthias-reining.com/rss2.xml' rel='self' type='application/rss+xml' />
+      <title>Matthias Reining</title>
+      <link>http://blog.matthias-reining.com</link>
+      <description>Weblog from Matthias Reining</description>
+      <language>de-de</language>
+      <pubDate>${createdTime?datetime?string("EEE, dd MMM yyyy HH:mm:ss z")}</pubDate>
+      <lastBuildDate>${createdTime?datetime?string("EEE, dd MMM yyyy HH:mm:ss z")}</lastBuildDate>
+      <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+      <generator>https://github.com/mr678/blog</generator>
+      <#list entries as entry>
+      <item>
+         <title>${entry.title}</title>
+         <link>http://blog.matthias-reining.com/${entry.key}</link>
+         <description>${entry.htmlEncodedContent}</description>
+         <pubDate>${entry.created?datetime?string("EEE, dd MMM yyyy HH:mm:ss z")}</pubDate> 
+         <guid>http://blog.matthias-reining.com/${entry.key}</guid>
+      </item>
+      </#list>        
+   </channel>
+</rss>
