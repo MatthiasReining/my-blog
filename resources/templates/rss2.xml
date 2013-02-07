@@ -14,7 +14,7 @@
       <item>
          <title>${entry.title}</title>
          <link>http://blog.matthias-reining.com/${entry.key}</link>
-         <description>${entry.htmlEncodedContent}</description>
+         <description><![CDATA[${entry.htmlContent}]]></description>
          <pubDate>${entry.created?datetime?string("EEE, dd MMM yyyy HH:mm:ss z")}</pubDate> 
          <guid>http://blog.matthias-reining.com/${entry.key}</guid>
       </item>
