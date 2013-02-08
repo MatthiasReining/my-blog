@@ -22,7 +22,7 @@
      <header>
         <a href="${blogRoot}/${entry.key}">
             <p>
-                <time datetime="2013-01-15T18:02:31">${entry.created?datetime?string.full}</time>
+                <time datetime="${entry.created?datetime?iso_utc}" style="padding-right:15px">${entry.created?date?string.long}</time>
                 ${entry.subtitle}
             </p>
             <h2>${entry.title}</h2>

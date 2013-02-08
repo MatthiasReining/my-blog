@@ -1,6 +1,6 @@
 title=Server-Setup: Linux, Java, MySQL und Glassfish
-subtitle=Ein Glassfish Setup
-created=2013-02-07T18:13:00
+subtitle=Eine Glassfish Installationsanleitung
+created=2013-02-08T03:13:12
 tags=Java, MySQL, Glassfish, Setup
 
 Der Artikel beschreibt die Installation eines Glassfish Application Servers
