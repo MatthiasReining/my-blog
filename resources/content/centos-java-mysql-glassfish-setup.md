@@ -1,29 +1,36 @@
-title=CentOS, Java, MySQl und Glassfish - Setup
+title=Server-Setup: Linux, Java, MySQL und Glassfish
 subtitle=Ein Glassfish Setup
 created=2013-02-07T18:13:00
 tags=Java, MySQL, Glassfish, Setup
 
-# Server Setup
+Der Artikel beschreibt die Installation eines Glassfish Application Servers
+mit einer MySQL Datenbank auf einem Linux (CentOS) System. Die Beschreibung
+startet mit einem *blankem* CentOS System. Bei dem Artikel handelt es sich um 
+ein kleines Tutorial in dem die einzelnen (Linux) Befehle recht detailliert 
+aufgeführt werden.
 
-## VM
+## Das Linux System
 
-Als Ausgangslage dient eine vom TPS zur Verfügung gestellte Standard VM mit CentOS als OS. Bei CentOS handelt es sich um einen RHEL clone (RedHat Enterprise Linux).
+Bei dem System handelt es sich um ein CentOS System. Hierbei handelt es sich um 
+einen RedHat Enterprise Linux (RHEL) clone. Das System release lässt sich mit 
+folgendem Befehl ermitteln:
 
     [root@intapprod ~]# cat /etc/*-release
     CentOS release 6.3 (Final)
     CentOS release 6.3 (Final)
     CentOS release 6.3 (Final)
 
-##Datenbank MySQL
+## Installation der MySQL Datenbank
 
-Als Datenbank dient ein MySQL Server.
-Die Installation orientiert sich an folgender Anleitung: http://dokuwiki.nausch.org/doku.php/centos:mysql
+Die Datenbankinstallation orientiert sich an der Anleitung [http://dokuwiki.nausch.org/doku.php/centos:mysql](http://dokuwiki.nausch.org/doku.php/centos:mysql)
 
-**Installation**
+### Installation
+
+Die Installation der MySQL Datenbank erfolgt mit dem Packagemanager *yum*.
 
     [root@intapprod ~]# yum install mysql-server -y
 
-**Check der Konfiguration**
+### Überprüfung der Konfiguration
 
     [root@intapprod ~]# cat /etc/my.cnf
     [mysqld]
@@ -37,15 +44,20 @@ Die Installation orientiert sich an folgender Anleitung: http://dokuwiki.nausch.
     log-error=/var/log/mysqld.log
     pid-file=/var/run/mysqld/mysqld.pid
 
-**DB Server starten**
+### DB Server starten
 
     [root@intapprod ~]# service mysqld start
 
-**Beim Start der VM DB Server automatisch starten**
+### Autostart der DB
 
     [root@intapprod ~]# chkconfig mysqld on
 
-**Server absichern**
+### Server absichern
+
+Nach der Installation ist die MySQL per default nicht gut abgesichert 
+(Remote-Zugriff, Passwörter). Mit dem Script `mysql_secure_installation` kann
+der Server abgesichert werden. Nach der Installation ist das `root` Passwort
+leer, so dass die Frage danach einfach mit Enter bestätigt werden muss.
 
     [root@intapprod ~]# /usr/bin/mysql_secure_installation
     ...
@@ -53,8 +65,8 @@ Die Installation orientiert sich an folgender Anleitung: http://dokuwiki.nausch.
     ...
     Set root password? [Y/n] <y>
     ...
-    New password: <Bahnhofsuhr>
-    Re-enter new password: <Bahnhofsuhr>
+    New password: <Password>
+    Re-enter new password: <Password>
     ...
     Remove anonymous users? [Y/n] <y>
     ...
@@ -64,13 +76,17 @@ Die Installation orientiert sich an folgender Anleitung: http://dokuwiki.nausch.
     ...
     Reload privilege tables now? [Y/n] <y>
 
-**Datenbank Schematas und Backup einspielen**
+### Datenbank Schematas und Backup einspielen
 
-Die DB Skripte und das Backup ist als "einfacher" SQL Dump vorhanden. Dieser kann wie folgt eingespielt werden.
+Bei Bedarf kann mit folgedem Befehl ein Backup-Script (SQL Dump) eingespielt 
+werden.
 
-    [root@intapprod ~]# mysql -u root -p < 2013-01-17-Thursday.sql
+    [root@intapprod ~]# mysql -u root -p < backup.sql
 
-Der Importvorgang zeigt nichts auf der Konsole an. Folgender Befehl zeigt an, ob zumindest die Datenbanken angelegt worden sind.
+Der Importvorgang zeigt nichts auf der Konsole an.  
+Mit folgendem Befehl kann man einen Überblick über die vorhanden Datenbanken 
+in der MySQL bekommen, so dass man überprüfen kann, ob ein neue Datenbank 
+angelegt worden ist.
 
     [root@intapprod ~]# mysql -u root -p
     ...
@@ -79,20 +95,21 @@ Der Importvorgang zeigt nichts auf der Konsole an. Folgender Befehl zeigt an, ob
     | Database           |
     +--------------------+
     | information_schema |
-    | litapp             |
+    | my-database        |
     | mysql              |
-    | ncbay              |
-    | ncbusinesscards    |
-    | schulung           |
     +--------------------+
-    6 rows in set (0.00 sec)
+    3 rows in set (0.00 sec)
+
 
 ## Java installieren
 
-Um maximale Flexibilität zu haben wird das JDK ohne Packagemanager installiert:
-Die Installation orientiert sich an der Oracle Anleitung (http://docs.oracle.com/javase/7/docs/webnotes/install/linux/linux-jdk.html)
+Um maximale Flexibilität zu haben, wird das JDK ohne Packagemanager installiert.
+Die Installation orientiert sich an der Oracle Anleitung ([http://docs.oracle.com/javase/7/docs/webnotes/install/linux/linux-jdk.html](http://docs.oracle.com/javase/7/docs/webnotes/install/linux/linux-jdk.html))
 
-Nachdem für den JDK Download auf der Oracle Webseite die Lizenzbedingungen bestätigt werden müssen, ist ein einfacher Download per wget nicht möglich. Das JDK kann aber über einen Browser heruntergeladen werden (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) und anschileßend per (Win)SCP auf den Server kopiert werden.
+Nachdem für den JDK Download auf der Oracle Webseite die Lizenzbedingungen 
+bestätigt werden müssen, ist ein einfacher Download per `wget` nicht möglich. 
+Das JDK kann aber über einen Browser heruntergeladen werden ([http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)) und anschileßend per (Win)SCP auf den Server kopiert werden.  
+Mit folgenden Befehlen wird das JDK unter `/data` installiert.
 
     [root@intapprod ~]# cd /
     [root@intapprod /]# mkdir data
@@ -108,12 +125,16 @@ Nachdem für den JDK Download auf der Oracle Webseite die Lizenzbedingungen best
 
 ## Glassfish installieren
 
-Als Appserver wird Oracle Glassfish Open Source Edition eingesetzt. Die Installation orientiert sich (sehr grob) an http://www.davidghedini.com/pg/entry/install_glassfish_3_1_on.
+Als Appserver wird Oracle Glassfish Open Source Edition eingesetzt. 
+Die Installation orientiert sich (sehr grob) an [http://www.davidghedini.com/pg/entry/install_glassfish_3_1_on](http://www.davidghedini.com/pg/entry/install_glassfish_3_1_on).
 
     [root@intapprod data]# wget http://download.java.net/glassfish/3.1.2.2/release/glassfish-3.1.2.2.zip
     [root@intapprod data]# unzip glassfish-3.1.2.2.zip
 
-**Startskript für Glassfish**
+### Startskript für Glassfish
+
+Damit der Glassfish Server als Service gestartet werden kann, muss ein Startskript
+angelegt werden.
 
     [root@intapprod data]# nano /etc/init.d/glassfish
 
@@ -141,24 +162,27 @@ Als Appserver wird Oracle Glassfish Open Source Edition eingesetzt. Die Installa
     esac
     exit 0
 
-**Skript Ausführbar machen**
+### Skript Ausführbar machen
 
     [root@intapprod data]# chmod 755 /etc/init.d/glassfish
     [root@intapprod data]# chkconfig --add /etc/init.d/glassfish
     [root@intapprod data]# chkconfig --level 234 glassfish on
 
-**Glassfish starten**
+### Glassfish starten
 
     [root@intapprod data]# service glassfish start
 
-**Admin Passwort ändern**
+### Admin Passwort ändern
 
-Nach der Installation muss das Standardpasswort "adminadmin" geändert werden.
-Greift man jedoch per Browser auf die Glassfish Admin Console (http://intappprod.wue.nobiscu:4848) bekommt man folgende Fehlermeldung:
+Nach der Installation muss das Passwort geändert werden.
+Greift man jedoch per Browser auf die Glassfish Admin Console 
+([https://server:4848](http://server:4848)) bekommt man folgende Fehlermeldung:
 
-Secure Admin must be enabled to access the DAS remotely.
+> Secure Admin must be enabled to access the DAS remotely.
 
-Hierzu muss der Befehl enable-secure-admin ausgeführt werden. Allerdings geht dies nicht, solange das "admin" Passwort leer ist. Das admin Passwort kann wie folgendermaßen geändert werden
+Hierzu muss der Befehl `enable-secure-admin` ausgeführt werden. 
+Allerdings geht dies nicht, solange das *admin* Passwort leer ist. 
+Das admin Passwort kann wie folgendermaßen geändert werden:
 
     [root@intapprod data]# cd /data/glassfish3/bin
     [root@intapprod bin]# JAVA_HOME=/data/java/jdk1.7.0_13
@@ -169,11 +193,11 @@ Hierzu muss der Befehl enable-secure-admin ausgeführt werden. Allerdings geht d
     Use "exit" to exit and "help" for online help.
     asadmin> change-admin-password \--user admin
     Enter admin password>   <Enter>
-    Enter new admin password>   <Bahnhofsuhr>
-    Enter new admin password again>   <Bahnhofsuhr>
+    Enter new admin password>   <Password>
+    Enter new admin password again>   <Password>
     Command change-admin-password executed successfully.
 
-Nun kann der Befehl enable-secure-admin ausgeführt werden
+Nun kann der Befehl `enable-secure-admin` ausgeführt werden
 
     \[\]# ./asadmin \--host localhost \--port 4848 enable-secure-admin
     Enter admin user name>  admin
@@ -192,11 +216,13 @@ Nun kann der Befehl enable-secure-admin ausgeführt werden
     Admin Port: 4848
     Command start-domain executed successfully.
 
-Anschließend ist eine Anmeldung an der Admin Console (https://intappprod.wue.nobiscum:4848/) mit admin/<Bahnhofsuhr> möglich.
+Anschließend ist eine Anmeldung an der Admin Console [https://server:4848](https://server:4848)
+möglich.
 
-**MySQL Treiber installieren**
+### MySQL Treiber installieren
 
-Hierzu muss der MySQL Treiber ins das Glassfish Module Verzeichnis kopiert werden. Den Treiber kann man sich von http://dev.mysql.com/downloads/connector/j/5.1.html herunterladen.
+Hierzu muss der MySQL Treiber ins das Glassfish Module Verzeichnis kopiert werden. 
+Den Treiber kann man sich per `wget`von [http://dev.mysql.com/downloads/connector/j/5.1.html](http://dev.mysql.com/downloads/connector/j/5.1.html) herunterladen.
 
     [root@intapprod ~]# cd /data
     [root@intapprod data]# /etc/init.d/glassfish stop
@@ -207,21 +233,24 @@ Hierzu muss der MySQL Treiber ins das Glassfish Module Verzeichnis kopiert werde
     [root@intapprod mysql-connector-java-5.1.23]# cd /data
     [root@intapprod data]# /etc/init.d/glassfish start
 
-Die Einrichtung der Datenquellen (Connection Pool, JDBC Resources) kann basierend auf folgender Anleitung vorgenommen werden: http://netbeans.dzone.com/connection-pooling-glassfish-nb
+### Einrichtung des Connection Pools
 
-Schulungsdatenbank:
+Die Einrichtung der Datenquellen (Connection Pool, JDBC Resources) kann 
+basierend auf folgender Anleitung vorgenommen werden: [http://netbeans.dzone.com/connection-pooling-glassfish-nb](http://netbeans.dzone.com/connection-pooling-glassfish-nb)
 
-JDBC Connection Pool: SchulungsPool
-JDBC Resource "jdbc/_trainingPool"
+Bei der Einrichtung eines *Connection Pool*s sind folgende Paramter notwendig:
 
-Folgende Parameter wurden für den SchulungsPool angegeben:
+Name         | Value
+-------------|:---------------------------------------
+User         | root
+DatabaseName | \<dbname\>
+Password     | \<password\>
+URL          | `jdbc:mysql://localhost:3306/<dbname>`
+Url          | `jdbc:mysql://localhost:3306/<dbname>`
+ServerName   | localhost
 
-| Name         | Value                                |
-|:-------------|-------------------------------------:|
-| User         | root                                 |
-| DatabaseName | schulung                             |
-| Password     | <Bahnhofsuhr>                        |
-| URL          | jdbc:mysql://localhost:3306/schulung |
-| Url          | jdbc:mysql://localhost:3306/schulung |
-| ServerName	 localhost                            |
+Der Zugriff per `root` User auf die Datenbank ist natürlich nicht ideal. Hier 
+sollte besser ein eigener Datenbankuser angelegt werden, der nur auf die
+entsprechende Datenbank Zugriff hat.  
+Die beiden Parameter *URL* und *Url* müssen beide angegeben werden.
 
