@@ -6,15 +6,15 @@ tags=Java, MySQL, Glassfish, Setup
 ![CentOS, MySQL, Java & Glassfish: a perfekt team!](/img/article-images/centos-mysql-java-glassfish.png "CentOS, MySQL, Java & Glassfish: a perfekt team!")  
 Der Artikel beschreibt die Installation eines Glassfish Application Servers
 mit einer MySQL Datenbank auf einem Linux (CentOS) System. Die Beschreibung
-startet mit einem *blankem* CentOS System. sBei dem Artikel handelt es sich um 
-ein kleines Tutorial in dem die einzelnen (Linux) Befehle recht detailliert 
+startet mit einem *blankem* CentOS System. Bei dem Artikel handelt es sich um 
+ein kleines Tutorial, in dem die einzelnen (Linux) Befehle recht detailliert 
 aufgeführt werden.
 
 ## Das Linux System
 
-Bei dem System handelt es sich um ein CentOS System. Hierbei handelt es sich um 
-einen RedHat Enterprise Linux (RHEL) clone. Das System release lässt sich mit 
-folgendem Befehl ermitteln:
+Als Linux Distribution kommt ein CentOS System zum Einsatz. Hierbei handelt es 
+sich um einen RedHat Enterprise Linux (RHEL) clone. Das System release lässt 
+sich mit folgendem Befehl ermitteln:
 
     [root@intapprod ~]# cat /etc/*-release
     CentOS release 6.3 (Final)
@@ -58,7 +58,8 @@ Die Installation der MySQL Datenbank erfolgt mit dem Packagemanager *yum*.
 Nach der Installation ist die MySQL per default nicht gut abgesichert 
 (Remote-Zugriff, Passwörter). Mit dem Script `mysql_secure_installation` kann
 der Server abgesichert werden. Nach der Installation ist das `root` Passwort
-leer, so dass die Frage danach einfach mit Enter bestätigt werden muss.
+leer, so dass die Frage nach dem "current password" einfach mit Enter bestätigt 
+werden muss.
 
     [root@intapprod ~]# /usr/bin/mysql_secure_installation
     ...
@@ -253,5 +254,5 @@ ServerName   | localhost
 Der Zugriff per `root` User auf die Datenbank ist natürlich nicht ideal. Hier 
 sollte besser ein eigener Datenbankuser angelegt werden, der nur auf die
 entsprechende Datenbank Zugriff hat.  
-Die beiden Parameter *URL* und *Url* müssen beide angegeben werden.
+Die Parameter *URL* und *Url* müssen beide angegeben werden.
 
