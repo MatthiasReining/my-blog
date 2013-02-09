@@ -93,7 +93,7 @@ article pre > code {
 }
 
 article > p > img {
-	width: 100%;
+    text-align: center;
 }
 
 article > footer {

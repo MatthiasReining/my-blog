@@ -3,9 +3,10 @@ subtitle=Eine Glassfish Installationsanleitung
 created=2013-02-08T03:13:12
 tags=Java, MySQL, Glassfish, Setup
 
+![CentOS, MySQL, Java & Glassfish: a perfekt team!](img/article-images/centos-mysql-java-glassfish.png "CentOS, MySQL, Java & Glassfish: a perfekt team!")  
 Der Artikel beschreibt die Installation eines Glassfish Application Servers
 mit einer MySQL Datenbank auf einem Linux (CentOS) System. Die Beschreibung
-startet mit einem *blankem* CentOS System. Bei dem Artikel handelt es sich um 
+startet mit einem *blankem* CentOS System. sBei dem Artikel handelt es sich um 
 ein kleines Tutorial in dem die einzelnen (Linux) Befehle recht detailliert 
 aufgeführt werden.
 
