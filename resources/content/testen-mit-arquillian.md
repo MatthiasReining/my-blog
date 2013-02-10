@@ -2,6 +2,7 @@ title=Testen mit Arquillian
 subtitle=Slides zu einem Arquillian Vortrag
 created=2012-10-12T09:12:12
 tags=Arquillian, Test
+language=de
 
 Die Slides sind Bestandteil einer Arquillian-Session, die ich im Rahmen des 
 [nobisCum](http://www.nobiscum.de)-Weiterbildungsprogramms gehalten habe.  
