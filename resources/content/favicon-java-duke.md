@@ -16,8 +16,8 @@ Das Bild ist von folgender Quelle: [http://duke.kenai.com/misc/index.html](http:
 
 Interessanter Weise wurde das *favicon.ico* von Microsoft mit der Version vom Internet 
 Explorer 5 eingeführt ([http://de.wikipedia.org/wiki/Favicon](http://de.wikipedia.org/wiki/Favicon)).
-Wenn man das *favicon* allerdings in einer HTML Seite einbetten will wird dieses
-im IE (9) nicht dargestellt
+Wenn man das *favicon* allerdings in einer HTML Seite einbetten will, wird dieses
+im IE (9) nicht dargestellt.
 
     <img src="http://blog.matthias-reining.com/favicon.ico" alt="Java Duke loves beer ;-)">
 
