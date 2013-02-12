@@ -23,4 +23,4 @@ im IE (9) nicht dargestellt.
 
 Im Firefox und in Chrome wird dagegen das Bild korrekt dargestellt ?!@#?? 
 
-> Die Spinnen die Browserhersteller ;-)
+> Die Spinnen, die Browserhersteller ;-)
