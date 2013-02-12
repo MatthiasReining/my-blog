@@ -1,4 +1,4 @@
-title=favicon.ico - Der Java Duke trinkt gerne Bier ;-)
+title=favicon.ico - Der Java Duke trinkt gerne Bier
 subtitle=Das unerkennbare Icon aus diesem Blog...
 created=2013-02-12T01:45:20
 tags=favicon.ico, java duke
