@@ -1,5 +1,5 @@
 title=Cronjob Fehlermeldung - mount.cifs: command not found
-subtitle=Das unerkennbare Icon aus diesem Blog...
+subtitle=Probleme im Batch...
 created=2013-02-13T13:29:16
 tags=troubleshooting, cron, cronjob, mount.cifs, mount, linux, command not found
 language=de
