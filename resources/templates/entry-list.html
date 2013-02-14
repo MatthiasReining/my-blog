@@ -18,7 +18,7 @@
     
     <article>
         <table id="entryList">
-        <#list entries as entry>        
+        <#list newEntries as entry>        
         <tr>
             <td>${entry.created?datetime?string.medium}</td>
             <td>
@@ -27,7 +27,27 @@
                 </a>    
             </td>
         </tr>
-        </#list>      
+        </#list>  
+        
+        <tr>
+            <td colspan="2" style="font-family: sans-serif; font-size: 15px">
+                <br/><br/><br/>
+                Einige Blogeinträge aus meinem <i>alten</i> 
+                Blog <a href="http://mr678.blogspot.com">http://mr678.blogspot.com</a> habe ich hier übernommen:
+                <br/><br/>
+            </td>
+        </tr>
+        
+        <#list oldEntries as entry>        
+        <tr>
+            <td>${entry.created?datetime?string.medium}</td>
+            <td>
+                <a href="${blogRoot}/${entry.key}">
+                    ${entry.title}
+                </a>    
+            </td>
+        </tr>
+        </#list>
         
         </table>
     </article>
