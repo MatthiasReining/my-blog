@@ -4,7 +4,7 @@ created=2013-02-19T21:03:11
 tags=MySQL, Backup, Linux, Shell, Skript, Windows
 language=de
 
-![blub](http://blog.matthias-reining.com/img/article-images/backup.png "Backup!")
+<img src="http://blog.matthias-reining.com/img/article-images/backup.png" style="float: right;">
 In dem Artikel [Server-Setup: Linux, Java, MySQL und Glassfish](http://blog.matthias-reining.com/serversetup-linux-java-mysql-und-glassfish/)
 wurde unter anderem das Setup einer MySQL Datenbank beschrieben. Was in dem Artikel
 allerdings unterschlagen worden ist, ist ein passendes Backup. Eine mögliche 
