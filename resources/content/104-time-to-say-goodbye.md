@@ -14,7 +14,7 @@ Your browser does not support the audio element.
 
 Zusammengefasst war es eine tolle Zeit und hat sehr viel Spaß gemacht!
 
-Wieso ich eigentlich nicht bei nC geblieben bin?  
+Wieso ich dann eigentlich eigentlich nicht bei nC bleibe?  
 
 > der Reiz des Neuen war einfacher größer... 
 
