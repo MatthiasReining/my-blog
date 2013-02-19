@@ -1,5 +1,5 @@
 title=MySQL Backup auf einem Linux System
-subtitle=Rollierte Backups
+subtitle=Rollierendes Backups
 created=2013-02-19T21:03:11
 tags=MySQL, Backup, Linux, Shell, Skript, Windows
 language=de
