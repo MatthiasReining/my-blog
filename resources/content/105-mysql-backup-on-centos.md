@@ -44,23 +44,27 @@ Und so sieht das Skript aus:
     NOW=$(date +"%Y-%m-%d")
     FILENAME="$NOW-mysql-dump-intappprod.sql"
     DUMPFILE="$BACKUP_DIR/$FILENAME"
+    
     # mount Windows share
     /sbin/mount.cifs //192.168.1.28/Backup $BACKUP_DIR/ -o user=backup,password=<share-password>
+    
     # Backup files.
     rm -f $DUMPFILE $DUMPFILE.gz
     mysqldump --all-databases -u$MYSQL_USER -p$MYSQL_PASS > $DUMPFILE
     gzip $DUMPFILE
+    
     REMOVE_BEFORE=$(date --date="-5 day" +"%Y-%m-%d")
     echo "Remove all files before $REMOVE_BEFORE"
     for filename in $BACKUP_DIR/*;
     do
-    dt_file=`echo $filename | grep -o -E '[12][0-9]{3}(-[0-9]{2}){2}'`
-    # \< less than for strings
-    if [ "$dt_file" \< "$REMOVE_BEFORE" ]; then
-    echo "remove $filename"
-    rm -f $filename
-    fi
+        dt_file=`echo $filename | grep -o -E '[12][0-9]{3}(-[0-9]{2}){2}'`
+        # \< less than for strings
+        if [ "$dt_file" \< "$REMOVE_BEFORE" ]; then
+            echo "remove $filename"
+            rm -f $filename
+        fi
     done;
+    
     #unmout
     /bin/umount $BACKUP_DIR
 
@@ -79,3 +83,4 @@ auf dem Windows Share zu erstellen.
     # backupjob um die alle mysql daten im Windows-Backup zu sichern 
     0 2 * * * /data/scripts/backup2share.sh
 
+Einige weitere Informationen zur Erstellung von *cron*-Jobs finden sich am Ende des Artikels [Cronjob-Fehlermeldung...](/cronjob-fehlermeldung--mountcifs-command-not-found/).
