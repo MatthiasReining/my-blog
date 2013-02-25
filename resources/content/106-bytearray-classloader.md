@@ -1,5 +1,5 @@
 title=ByteArrayClassloader, Jar in Jar & executable WAR-Files
-subtitle=todo
+subtitle=Programme aus WAR-Files starten!
 created=2013-02-24T18:01:12
 tags=Jar in Jar, Executable WAR, ByteArrayClassLoader, ClassLoader, Byte Array Class Loader
 language=de
