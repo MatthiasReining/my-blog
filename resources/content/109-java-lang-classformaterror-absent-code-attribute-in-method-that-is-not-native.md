@@ -40,11 +40,11 @@ Bei mir konkret war es eine Unit-Test mit einem Jersey-Client der einen JSON Ser
 		</dependency>
 		
 
-Der Test nutzt daher auch die Klassen auf der `javaee-web-api`.
+Der Test nutzt daher auch die Klassen aus der `javaee-web-api`.
 
 Um dieses Problem zu lösen gibt es verschiedene Ansätze: 
 
-* JBoss bietet eine alternative Implementierung zu `javaee-web-api`an, die dieses Problem nicht hat.
+* JBoss bietet eine alternative Implementierung zu `javaee-web-api` an, die dieses Problem nicht hat.
 
 		<dependency>
 		   <groupId>org.jboss.spec</groupId>
