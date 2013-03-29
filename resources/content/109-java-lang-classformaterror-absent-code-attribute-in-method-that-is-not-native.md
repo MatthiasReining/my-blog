@@ -26,18 +26,19 @@ Zum kompilieren ist dies auch kein Problem; wird allerdings das JAR File in eine
 
 Bei mir konkret war es eine Unit-Test mit einem Jersey-Client der einen JSON Service gegen einen laufenden Server testet (also eigentlich kein *echter* Unit-Test ;-)).
 
- 		<dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-json</artifactId>
-            <version>1.17.1</version>
-        </dependency>
-
-  		<dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>1.17.1</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>1.17.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.17.1</version>
+			<scope>test</scope>
+		</dependency>
+		
 
 Der Test nutzt daher auch die Klassen auf der `javaee-web-api`.
 
