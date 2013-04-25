@@ -4,7 +4,7 @@ created=2013-04-26T01:15:44
 tags=JavaScript, JS, Handlebar, Handlebars, Iterator
 language=en
 
-Handlebars has a build in iterator `each` to iterate over a list.  
+Handlebars has the build in iterator `each` to iterate over a list.  
 To iterate over a map you have to implement your own `registerHelper`. A possible solution could look like the following example:
 
 Definition of new Handlebar function:
