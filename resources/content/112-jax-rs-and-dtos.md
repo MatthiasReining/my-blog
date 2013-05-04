@@ -6,8 +6,10 @@ language=en
 
 Sometimes it is difficult to use entity-beans directly in your view layer or in your REST interface. There are a lot of blog entries and discussions about this topic. For example:
 
-[http://www.adam-bien.com/roller/abien/entry/value_object_vs_data_transfer](http://www.adam-bien.com/roller/abien/entry/value_object_vs_data_transfer)  
-[http://www.adam-bien.com/roller/abien/entry/how_evil_are_actually_data](http://www.adam-bien.com/roller/abien/entry/how_evil_are_actually_data)  
+[http://www.adam-bien.com/roller/abien/entry/value_object_vs_data_transfer](http://www.adam-bien.com/roller/abien/entry/value_object_vs_data_transfer)
+
+[http://www.adam-bien.com/roller/abien/entry/how_evil_are_actually_data](http://www.adam-bien.com/roller/abien/entry/how_evil_are_actually_data)
+
 Both are from Adam Bien's blog with very interesting comments.
 
 Now some explanation how I deal with DTOs in REST interfaces (specially for **HTML5/REST/JSON** applications):
