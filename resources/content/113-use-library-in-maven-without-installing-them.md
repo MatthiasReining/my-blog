@@ -1,4 +1,4 @@
-title=How you can use a local library with maven without install
+title=How you can use a local library with maven without 'mvn:install'
 subtitle=It's not a nice way, but it works...
 created=2013-05-21T18:13:14
 tags=Java, maven, mvn, maven3, install, library, libraries, local libraries
