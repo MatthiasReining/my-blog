@@ -1,5 +1,5 @@
-title=Steuern bei der Hausratversicherung: Versicherungssteuer und Feuerschutzsteuer
-subtitle=Solche Steuerkonstelationen lassen einfache Versicherungsprodukte etwas komplexer werden...
+title=Hausratversicherung: Versicherungssteuer und Feuerschutzsteuer
+subtitle=Einfache Versicherungsprodukte mit komplexer Steuer
 created=2013-06-21T01:32:11
 tags=Versicherungs IT, Insurance IT, Versicherungssteuer, Hausratversicherung, Feuerschutzsteuer
 language=de
