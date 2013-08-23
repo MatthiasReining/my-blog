@@ -27,6 +27,7 @@ header > a {
 }
 header h1 {
 	font-family: TitilliumText, sans-serif;
+	/*font-family: sans-serif;*/
 	font-size: 1.5em;
 }
 
@@ -64,11 +65,13 @@ article {
 	padding: 70px 100px 0 120px;
 	font-size: 1.5em;
 	/*border: 1px solid red;*/
-	font-family: LinLibertine, serif;
+	/*font-family: LinLibertine, serif;*/
+	font-family: serif;
 }
 
 article > header {
 	font-family: TitilliumText, sans-serif;
+	/*font-family: sans-serif;*/
 	font-weight: bold;
 }
 
