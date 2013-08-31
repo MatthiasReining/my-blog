@@ -1,5 +1,5 @@
-title=Download JDK via wget
-subtitle=Samsung Data Migration & BitLocker - Access violation at address xyz in module 'Restore.dll'
+title=Samsung Data Migration & BitLocker - Access violation at address xyz in module 'Restore.dll'
+subtitle=Die kleinen Details...
 created=2013-08-12T23:27:13
 tags=Samsung SSD, Data Migration, BitLocker
 language=de
