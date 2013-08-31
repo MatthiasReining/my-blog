@@ -12,7 +12,7 @@
       <generator>https://github.com/mr678/blog</generator>
       <#list entries as entry>
       <item>
-         <title>${entry.title}</title>
+         <title><![CDATA[${entry.title}]]></title>
          <link>http://blog.matthias-reining.com/${entry.key}</link>
          <description><![CDATA[${entry.htmlContent}]]></description>
          <pubDate>${entry.created?datetime?string("EEE, dd MMM yyyy HH:mm:ss z")}</pubDate> 
