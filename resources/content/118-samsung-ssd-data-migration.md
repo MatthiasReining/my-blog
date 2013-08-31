@@ -1,6 +1,6 @@
 title=Samsung Data Migration & BitLocker - Access violation at address xyz in module 'Restore.dll'
 subtitle=Die kleinen Details...
-created=2013-08-12T23:27:13
+created=2013-08-31T03:24:13
 tags=Samsung SSD, Data Migration, BitLocker
 language=de
 
@@ -22,7 +22,7 @@ Ich habe folgende Fehlermeldung kurz nach dem Start des Klonvorgangs bekommen:
 
 #### Ursache
 
-Nachdem nach dem *1000sten* Klonversuch das Ganze immer noch nicht geklappt hab, hab ich mir dann doch mal die Details zu der Software angeschaut:
+Nachdem ich gefühlte 100mal einfach den Klon-Button gedrückt habe, hat das Ganze natürlich auch nicht funktioniert... Also hab ich mir dann doch mal die Details zu der Migrations-Software angeschaut:
 
 [Samsung Data Migration - User Manual](http://www.samsung.com/global/business/semiconductor/samsungssd/downloads/Samsung_SSD_Data_Migration_User_Manual_German_v2.pdf)
 
@@ -37,3 +37,7 @@ Punkt 8 der Beschränkungen:
 BitLocker deaktivieren und dann geht's auch...
 
 Hätte man sich natürlich gleich denken können, allerdings ist die Fehlermeldung hier auch nicht wirklich hilfreich!
+
+#### Fazit
+
+RTFM -> Obwohl ich eigentlich mehr Fan von aussagekräftigen Fehlermeldungen bin ;-) 
