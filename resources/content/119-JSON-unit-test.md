@@ -14,6 +14,7 @@ But if you want to test some of your code, where you navigate through the JSON o
 
 Your application normally have following dependencies:
 
+
   	<dependency>
 		<groupId>javax</groupId>
 		<artifactId>javaee-api</artifactId>
@@ -21,9 +22,11 @@ Your application normally have following dependencies:
 		<scope>provided</scope>
 	</dependency>
 
+	
 This means your test code has also access to the javaee-api. But the api defines only interfaces / no implementation. The implementation is part of the application server (in this case Glassfish 4) and this means that your unit test has no access to the needed classes and you get the `JsonProviderImpl not found` exception.
 
 You can solve this error by adding the implementation to your test dependencies
+
 
  	<dependency>  
 		<groupId>org.glassfish</groupId> 
@@ -32,3 +35,4 @@ You can solve this error by adding the implementation to your test dependencies
 		<scope>test</scope>
 	</dependency>
 
+	
