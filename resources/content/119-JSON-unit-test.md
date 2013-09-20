@@ -14,7 +14,6 @@ But if you want to test some of your code, where you navigate through the JSON o
 
 Your application normally have following dependencies:
 
-<code><pre>
 	<dependency>
 		<groupId>javax</groupId>
 		<artifactId>javaee-api</artifactId>
