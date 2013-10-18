@@ -1,6 +1,6 @@
 title=Backup a Linux Server to Dropbox
 subtitle=How to Backup your Server (MySQL and Configuration) to Dropbox?
-created=2013-09-20T15:42:10
+created=2013-10-18T21:14:30
 tags=Backup, Linux, Dropbox, MySQL, crontab
 language=en
 
