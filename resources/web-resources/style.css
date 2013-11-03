@@ -1,43 +1,59 @@
-
 body {
-	color: #333;
-	font-size:10pt;
-	margin: 0px;
-	padding: 0;
-	/*border: 4px solid blue;*/
-	font-family: sans-serif;
-	font-weight: normal;
+    font-family: Open Sans, Tahoma,Verdana,Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    color: #535353;
+    
 }
 
 #blog {
-	margin: 10px auto 10px auto;
-	border: 1px solid #888;
-	box-shadow: 0px 0px 10px #555;
-	width: 960px;
+    margin: 10px auto 10px auto;
+    border: 4px solid #666;
+    width: 960px;
 }
 
 
 #blog > header {
-	font-size: 0.8em;
-	padding: 0 0 0 10px;
-}
-header > a {
-    text-decoration: none;
-    color: inherit;
-}
-header h1 {
-	font-family: TitilliumText, sans-serif;
-	/*font-family: sans-serif;*/
-	font-size: 1.5em;
+    padding: 0 0 0 10px;
 }
 
-header p {
-	margin: -10px 0 0 0;
+#blog > header table {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;        
 }
 
 header a {
-	text-decoration: none;
-	color: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0px;
+}
+#blog > header + hr {
+    margin: 0px;
+}
+
+#blog > header .social {
+    text-align: right;
+}
+
+#blog > header .social a:hover {
+    opacity: 0.8;
+}
+#blog > header .social a {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+#blog > header .social a {
+    height: 48px;
+    width: 49px;
+    margin: 0 1px 0 0;
 }
 
 #ad-index-right {
@@ -49,10 +65,9 @@ header a {
 }
 
 #articleLinkList{
-    font-size: 9px;
+    font-size: 0.8em;
 }
 #articleLinkList article {
-    font-family: sans-serif;
     padding-top: 10px;
 }
 
@@ -61,34 +76,27 @@ header a {
 }
 
 article {
-	width: 728px;
-	padding: 70px 100px 0 120px;
-	font-size: 1.5em;
-	/*border: 1px solid red;*/
-	/*font-family: LinLibertine, serif;*/
-	font-family: serif;
+    width: 728px;
+    padding: 50px 100px 0 120px;
 }
 
 article > header {
-	font-family: TitilliumText, sans-serif;
-	/*font-family: sans-serif;*/
-	font-weight: bold;
+    font-weight: bold;
 }
 
 article > header p {
-	font-family: sans-serif;
-	font-weight: normal;
-	font-size: 0.8em;
-	color: #888;
-	margin: 0;
-	padding: 0;
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #888;
+    margin: 0;
+    padding: 0;
 }
 
 article > header h2 {
-	font-size: 2.0em;
-	line-height: 1.1em;
-	margin: 0;
-	padding: 0;
+    font-size: 2.0em;
+    line-height: 1.1em;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -101,7 +109,8 @@ article > header h2 {
 }
 
 article pre > code {
-    font-size: 0.7em;        
+    font-size: 0.9em; 
+    line-height: 1.2;
 }
 
 article > p > img {
@@ -123,42 +132,30 @@ article > footer {
 }
 
 #blog > footer > section a {
-    /*text-decoration: none;*/
     color: inherit;
 }
 
+#blog .entryList .entryDate {
+    width: 150px;
+    font-family: monospace;
+    font-size: 1.0em;
+}
+
 @media screen and (min-width: 1000px) {
-.older {
-    position: fixed;
-    top: 40%;
-    left: 0;
-    background-image: url("img/left.png");
-    width: 70px;
-    height: 70px;
-}
-.newer {
-    position: fixed;
-    top: 40%;
-    right: 0;
-    background-image: url("img/right.png");
-    width: 70px;
-    height: 70px;
-}
-}
-
-
-@font-face {
-	/* downloaded from http://www.fontsquirrel.com/fonts/Linux-Libertine */
-	font-family: LinLibertine;
-	src:url('fonts/LinLibertine_R.otf') format('opentype');
-}
-@font-face {
-	/* downloaded from http://www.fontsquirrel.com/fonts/cabin */
-	font-family: Cabin;
-	src:url('fonts/Cabin-Regular.otf') format('opentype');
-}
-@font-face {
-	/* downloaded from http://www.fontsquirrel.com/fonts/TitilliumText */
-	font-family: TitilliumText;
-	src:url('fonts/TitilliumText25L004.otf') format('opentype');
+    .older {
+        position: fixed;
+        top: 40%;
+        left: 0;
+        background-image: url("img/left.png");
+        width: 70px;
+        height: 70px;
+    }
+    .newer {
+        position: fixed;
+        top: 40%;
+        right: 0;
+        background-image: url("img/right.png");
+        width: 70px;
+        height: 70px;
+    }
 }

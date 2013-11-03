@@ -1,62 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="keywords" content="Java, JEE, Java EE, Web, Entwicklung, IT, Versicherung, Insurance IT, HTML5, Matthias Reining, Reining"/>
-    <meta name="description" content="Weblog von Matthias Reining"/>
-    
-    <#include "page-header.html">
-    
-    <title>Matthias Reining's Blog</title>
-   
-</head>
+    <head>
+        <#include "page-header.html">
 
-<body>
-    <div id="blog">
-    <#include "blog-header.html">
-   
-    
-    <article>
-        <table id="entryList">
-        <#list newEntries as entry>        
-        <tr>
-            <td>${entry.created?datetime?string.medium}</td>
-            <td>
-                <a href="${blogRoot}/${entry.key}">
-                    ${entry.title}
-                </a>    
-            </td>
-        </tr>
-        </#list>  
-        
-        <tr>
-            <td colspan="2" style="font-family: sans-serif; font-size: 15px">
-                <br/><br/><br/>
-                Einige Blogeinträge aus meinem <i>alten</i> 
-                Blog <a href="http://mr678.blogspot.com">http://mr678.blogspot.com</a> habe ich hier übernommen:
-                <br/><br/>
-            </td>
-        </tr>
-        
-        <#list oldEntries as entry>        
-        <tr>
-            <td>${entry.created?datetime?string.medium}</td>
-            <td>
-                <a href="${blogRoot}/${entry.key}">
-                    ${entry.title}
-                </a>    
-            </td>
-        </tr>
-        </#list>
-        
-        </table>
-    </article>
-    
-    <#include "page-footer.html">
+        <title>Matthias Reining's Blog</title>
 
-    </div>
-    
-    <#include "google-analytics.html">
-    
-</body>
+    </head>
+
+    <body>
+        <div id="blog">
+            <#include "blog-header.html">
+
+
+            <article>
+                <table class="entryList">
+                    <#list newEntries as entry>        
+                    <tr>
+                        <td class="entryDate">${entry.created?datetime?string("yyyy-MM-dd HH:mm")}</td>
+                        <td>
+                            <a href="${blogRoot}/${entry.key}">
+                                ${entry.title} 
+                            </a>    
+                        </td>
+                    </tr>
+                    </#list>  
+
+                    <tr>
+                        <td colspan="2" style="font-family: sans-serif; font-size: 15px">
+                            <br/><br/><br/>
+                            Einige Blogeinträge aus meinem <i>alten</i> 
+                            Blog <a href="http://mr678.blogspot.com">http://mr678.blogspot.com</a> habe ich hier übernommen:
+                            <br/><br/>
+                        </td>
+                    </tr>
+
+                    <#list oldEntries as entry>        
+                    <tr>
+                        <td class="entryDate">${entry.created?datetime?string("yyyy-MM-dd HH:mm")}</td>
+                        <td>
+                            <a href="${blogRoot}/${entry.key}">
+                                ${entry.title}
+                            </a>    
+                        </td>
+                    </tr>
+                    </#list>
+
+                </table>
+            </article>
+
+            <#include "page-footer.html">
+
+        </div>
+
+        <#include "google-analytics.html">
+
+    </body>
 </html>
