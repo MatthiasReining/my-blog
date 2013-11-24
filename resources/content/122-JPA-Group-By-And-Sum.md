@@ -1,5 +1,5 @@
 title=JPA, JPQL, GROUP BY and SUM - The argument must be numeric! 
-subtitle=Integer vs. int
+subtitle=Integer vs. int / EclipseLink on GF4
 created=2013-11-24T03:12:32
 tags=JavaEE, JPA, Java, JPQL, Troubleshooting 
 language=en
@@ -39,6 +39,17 @@ Normally I would say a simple *JOIN* with a *GROUP BY* clause. But *SUM* caused 
 
 >SUM can only be used for numeric values! All right!
 
-But in this case **Integer** is not a numeric value! Integer is an object, that can also be *null*. 
+But in this case **Integer** is not a numeric value! 
 
 Changing my attribute `workingTime` from **Integer** to **int** everything works fine!!!
+
+Nevertheless, it's strange and it's wrong!
+
+See the Oracle [documentation](http://docs.oracle.com/javaee/7/tutorial/doc/persistence-querylanguage005.htm#BNBVY):
+
+
+> Name: **SUM**  
+> Return Type: **Long** (for integral fields), **Double** (for floating-point fields),
+BigInteger (for BigInteger fields), BigDecimal (for BigDecimal fields)
+
+When I use BigDecimal as attribute type, I get on GF4 the described error! Bad thing!
