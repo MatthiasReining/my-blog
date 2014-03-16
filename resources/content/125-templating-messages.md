@@ -1,6 +1,6 @@
 title=Java Template Engine - The Easy One
 subtitle=Use MessageFormat as easy template engine.
-created=2013-03-16T00:15:14
+created=2014-03-16T00:15:14
 tags=Java, MessageFormat
 language=en
 
