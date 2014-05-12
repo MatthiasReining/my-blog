@@ -34,8 +34,6 @@ Content of **project.xml**:
 	    </configuration>
 	</project>
 
-You have to replace **\*eclipseProjectName\*** with your project name!
-
 Content of **project.properties**:
 
 	config.folder=
@@ -47,5 +45,7 @@ Content of **project.properties**:
 	site.root.folder=${file.reference.eclipseProjectName-app}
 	test.folder=
 
+
+You have to replace **\*eclipseProjectName\*** with your project name!
 
 After these it should be possible to open directly a eclipse based static web project into Netbeans!
