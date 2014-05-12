@@ -1,4 +1,4 @@
-title=Import an Eclipse static web project into Netbeans
+title=Import a static web project from Eclipse into Netbeans
 subtitle=
 created=2014-05-12T15:21:44
 tags=Netbeans, Eclipse, import, static web project  
