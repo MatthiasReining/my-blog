@@ -1,21 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="alternate" type="application/rss+xml" title="Matthias Reining's Blog" href="http://feeds.feedburner.com/matthias-reining" />
 
-        <#include "page-header.html">
         <title>Matthias Reining's Blog</title>
+        <#include "page-header.html">
 
     </head>
 
     <body>
-        <div id="blog">
-            <#include "blog-header.html">
-            <#include "main-article.html">
+        <div class="container" style="max-width: 1000px; margin-top: 10px" id="blog">
+            <div class="panel panel-default">
+                <div class="panel-body" style="padding-top:0px;">
 
-            <#include "article-link-list.html">
 
-            <#include "page-footer.html">
+                    <#include "blog-header.html">
+                    <#include "main-article.html">
+
+                    <#include "article-link-list.html">
+
+                    <#include "page-footer.html">
+
+
+                </div>
+            </div>
 
         </div>
 

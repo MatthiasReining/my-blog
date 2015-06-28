@@ -1,26 +1,30 @@
-<div id="articleLinkList">
+<div class="container" style="max-width: 750px" id="articleLinkList">
 <br/>
 
 <#list entries as entry>
 
 <#if entry_index == 1>
+<!--
     <div id="ad-index-right" >
-        <script type="text/javascript"><!--
+        <script type="text/javascript">
+            < ! - -
+                       
             google_ad_client = 'ca-pub-3643460398629242';
             /* ad 160x600 */
             google_ad_slot = '9153974075';
             google_ad_width = 160;
             google_ad_height = 600;
-            //-->
+            //- - >
         </script>
         <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
     </div>
+-->
 </#if>
 
 <article>
      <hr/>
      <header>
-        <a href="${blogRoot}/${entry.key}">
+        <a href="${blogRoot}/${entry.key}" style="text-decoration: none">
             <p>
                 <time datetime="${entry.created?datetime?iso_utc}" style="padding-right:15px">${entry.created?date?string.long}</time>
                 ${entry.subtitle}

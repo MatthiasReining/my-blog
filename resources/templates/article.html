@@ -1,35 +1,48 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta name="keywords" content="${entry.keywords}"/>
-    <meta name="description" content="${entry.title}"/>
-	
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="@MatthiasReining">
-	<meta name="twitter:title" content="${entry.title}">
-	<meta name="twitter:description" content="${entry.htmlContent?substring(0, 210)?html}">
-	<meta name="twitter:creator" content="@MatthiasReining">
-	<meta name="twitter:domain" content="http://blog.matthias-reining.com/${entry.key}">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <#include "page-header.html">
-    
-    <title>${entry.title} by @MatthiasReining</title>
-	
-</head>
+        <meta name="keywords" content="${entry.keywords}"/>
+        <meta name="description" content="${entry.title}"/>
 
-<body>
 
-    <#include "horizontal-links.html">
-   
-    <div id="blog">
-    <#include "blog-header.html">
-    <#include "main-article.html">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@MatthiasReining">
+        <meta name="twitter:title" content="${entry.title}">
+        <meta name="twitter:description" content="${entry.htmlContent?substring(0, 210)?html}">
+        <meta name="twitter:creator" content="@MatthiasReining">
+        <meta name="twitter:domain" content="http://blog.matthias-reining.com/${entry.key}">
 
-    <#include "page-footer.html">
-    </div>
-    
-    <#include "google-analytics.html">
-    
-</body>
+
+        <#include "page-header.html">
+
+        <title>${entry.title} by @MatthiasReining</title>
+
+    </head>
+
+    <body>
+
+        <!--#include "horizontal-links.html"-->
+
+        <div class="container" style="max-width: 1000px; margin-top: 10px" id="blog">
+            <div class="panel panel-default">
+                <div class="panel-body" style="padding-top:0px;">
+
+
+
+                    <#include "blog-header.html">
+                    <#include "main-article.html">
+
+                    <#include "page-footer.html">
+                </div>
+            </div>
+        </div>
+
+        <#include "google-analytics.html">
+
+    </body>
 </html>
