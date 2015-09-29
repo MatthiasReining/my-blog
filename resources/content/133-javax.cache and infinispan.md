@@ -16,7 +16,8 @@ But, what's the current sitatuion?
 - The JSR 107 for Caching is final  
 [http://download.oracle.com/otndocs/jcp/jcache-1_0-fr-eval-spec/index.html](http://download.oracle.com/otndocs/jcp/jcache-1_0-fr-eval-spec/index.html)
 - Infinispan has also already an implementation (or better an adapated API)  
-[http://infinispan.org/docs/8.0.x/user_guide/user_guide.html#_using_infinispan_as_a_jsr107_jcache_provider](http://infinispan.org/docs/8.0.x/user_guide/user_guide.html#_using_infinispan_as_a_jsr107_jcache_provider)
+[http://infinispan.org/docs/8.0.x/user_guide/user_guide.html#_using_infinispan_as_a_jsr107_jcache_provider](http://infinispan.org/docs/8.0.x/user_guide/user_guide.html#_using_infinispan_as_a_jsr107_jcache_provider) 
+
 
 That's great!
 
