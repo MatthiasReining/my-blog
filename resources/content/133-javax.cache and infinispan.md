@@ -1,6 +1,6 @@
-title=Caching as a Standard | Using JSR 107 (JCache) on Wildfly Server (Java EE 7)
+title=Caching as a Standard - Using JSR 107 (JCache) on Wildfly Server (Java EE 7)
 subtitle=let's run javax.cache with Infinispan
-created=2015-09-30T01:00:12
+created=2015-09-30T01:02:12
 tags=Infinispan, JSR 107, JCache, Wildfly, Cache
 language=en
 
